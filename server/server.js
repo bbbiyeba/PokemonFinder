@@ -8,9 +8,14 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware - ALLOW BOTH PORTS
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:5173',
+    'https://pokemon-finder-frontend.onrender.com'  // Add your frontend URL
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 
 // MongoDB Connection
