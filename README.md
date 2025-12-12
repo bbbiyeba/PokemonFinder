@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
   # Pokémon Finder Web App UI
 
@@ -10,7 +9,6 @@
 
   Run `npm run dev` to start the development server.
   
-=======
 # Pokémon Finder
 
 Submitted by: HAS NOT YET BEEN SUBMITTED!!! (your-directory-id)
@@ -25,7 +23,7 @@ APIs: [PokéAPI](https://pokeapi.co/)
 
 Contact Email(s): bbbiyeba@umd.edu, tlugo@umd.edu
 
-Deployed App Link: [Your Render Link Here - Add after deployment]
+Deployed App Link: [https://pokemonfinder-1.onrender.com]
 
 ---
 
@@ -67,4 +65,3 @@ Deployed App Link: [Your Render Link Here - Add after deployment]
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 - [React Documentation](https://react.dev/)
 - [Express.js Documentation](https://expressjs.com/)
->>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
