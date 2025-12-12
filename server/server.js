@@ -11,7 +11,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000', 
     'http://localhost:5173',
-    'https://pokemonfinder.onrender.com'  // Add your frontend URL
+    'https://pokemonfinder-1.onrender.com'  // Add your frontend URL
   ],
   credentials: true
 }));
