@@ -20,9 +20,18 @@ interface Pokemon {
   weight: number;
   abilities: { ability: { name: string }; is_hidden: boolean }[];
 }
-
 // Backend API URL
-const API_URL = 'http://localhost:5000/api/favorites';
+const API_URL = import.meta.env.PROD 
+  ? 'https://pokemonfinder.onrender.com/api/favorites'
+  : 'http://localhost:5000/api/favorites';
+interface FavoritePokemon {
+  id: number;
+  name: string;
+  types: string[];
+  sprite: string;
+  note: string;
+}
+>>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
 
 export function PokemonDetail() {
   const { nameOrId } = useParams<{ nameOrId: string }>();
@@ -47,6 +56,7 @@ export function PokemonDetail() {
         const data = await response.json();
         setPokemon(data);
 
+<<<<<<< HEAD
         // Check if already in favorites from backend
         try {
           const favResponse = await fetch(`${API_URL}/${data.id}`);
@@ -58,6 +68,14 @@ export function PokemonDetail() {
         } catch (err) {
           // Not in favorites, that's okay
           setIsFavorite(false);
+=======
+        // Check if already in favorites
+        const favorites = JSON.parse(localStorage.getItem('pokemonFavorites') || '[]');
+        const existingFav = favorites.find((fav: FavoritePokemon) => fav.id === data.id);
+        if (existingFav) {
+          setIsFavorite(true);
+          setNote(existingFav.note || '');
+>>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
         }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch Pokémon');
@@ -71,6 +89,7 @@ export function PokemonDetail() {
     }
   }, [nameOrId]);
 
+<<<<<<< HEAD
   const handleAddToFavorites = async () => {
     if (!pokemon) return;
 
@@ -133,6 +152,46 @@ export function PokemonDetail() {
       console.error('Error removing favorite:', error);
       alert('Failed to remove from favorites');
     }
+=======
+  const handleAddToFavorites = () => {
+    if (!pokemon) return;
+
+    const favorites: FavoritePokemon[] = JSON.parse(
+      localStorage.getItem('pokemonFavorites') || '[]'
+    );
+
+    const existingIndex = favorites.findIndex((fav) => fav.id === pokemon.id);
+
+    if (existingIndex !== -1) {
+      // Update note if already exists
+      favorites[existingIndex].note = note;
+    } else {
+      // Add new favorite
+      const newFavorite: FavoritePokemon = {
+        id: pokemon.id,
+        name: pokemon.name,
+        types: pokemon.types.map((t) => t.type.name),
+        sprite: pokemon.sprites.other['official-artwork'].front_default,
+        note,
+      };
+      favorites.push(newFavorite);
+    }
+
+    localStorage.setItem('pokemonFavorites', JSON.stringify(favorites));
+    setIsFavorite(true);
+  };
+
+  const handleRemoveFromFavorites = () => {
+    if (!pokemon) return;
+
+    const favorites: FavoritePokemon[] = JSON.parse(
+      localStorage.getItem('pokemonFavorites') || '[]'
+    );
+    const filtered = favorites.filter((fav) => fav.id !== pokemon.id);
+    localStorage.setItem('pokemonFavorites', JSON.stringify(filtered));
+    setIsFavorite(false);
+    setNote('');
+>>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
   };
 
   if (loading) {
@@ -277,7 +336,11 @@ export function PokemonDetail() {
             ) : (
               <>
                 <button
+<<<<<<< HEAD
                   onClick={handleUpdateNote}
+=======
+                  onClick={handleAddToFavorites}
+>>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
                   className="flex-1 flex items-center justify-center gap-3 bg-green-500 text-white py-4 rounded-xl font-medium shadow-lg hover:shadow-xl hover:bg-green-600 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <Heart className="w-5 h-5 fill-current" />
@@ -296,4 +359,8 @@ export function PokemonDetail() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9fac65baa7f5f3e8741a87dfbf7cf80e0d999988
