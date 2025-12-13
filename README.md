@@ -11,7 +11,7 @@
   
 # Pokémon Finder
 
-Submitted by: HAS NOT YET BEEN SUBMITTED!!! (your-directory-id)
+Submitted by: Bryce Biyeba (119565711)
 
 Group Members: Tyler Lugo (119789971), Bryce Biyeba (119565711)
 
