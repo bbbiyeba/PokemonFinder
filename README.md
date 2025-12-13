@@ -13,7 +13,7 @@
 
 Submitted by: HAS NOT YET BEEN SUBMITTED!!! (your-directory-id)
 
-Group Members: Tyler Lugo (your-directory-id), Bryce Biyeba (119565711)
+Group Members: Tyler Lugo (119789971), Bryce Biyeba (119565711)
 
 App Description: A Pokémon finder application that allows users to search for Pokémon by name or ID, view detailed stats and information, and save their favorite Pokémon with personal notes to a MongoDB database.
 
