@@ -1,7 +1,7 @@
 
   # Pokémon Finder Web App UI
 
-  This is a code bundle for Pokémon Finder Web App UI. The original project is available at https://www.figma.com/design/bRTuVLtGfcFpan6pMnRFjz/Pok%C3%A9mon-Finder-Web-App-UI.
+  Figma was used to come up with the UI/UX Design for this project. Design located at https://www.figma.com/design/bRTuVLtGfcFpan6pMnRFjz/Pok%C3%A9mon-Finder-Web-App-UI.
 
   ## Running the code
 
