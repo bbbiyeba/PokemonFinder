@@ -17,8 +17,6 @@ Group Members: Tyler Lugo (119789971), Bryce Biyeba (119565711)
 
 App Description: A Pokémon finder application that allows users to search for Pokémon by name or ID, view detailed stats and information, and save their favorite Pokémon with personal notes to a MongoDB database.
 
-YouTube Video Link: https://youtu.be/BwybDBLA_F4
-
 APIs: [PokéAPI](https://pokeapi.co/)
 
 Contact Email(s): bbbiyeba@umd.edu, tlugo@umd.edu
